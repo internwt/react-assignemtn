@@ -1,10 +1,62 @@
 .App {
   text-align: center;
-  .product_image_header{
+  max-width: 100%;
+  overflow-x: hidden;
+
+  .product_image_header {
     background: #ffd966;
+
   }
-  .product_image{
+
+  .product_image {
     width: 400px;
   }
-}
 
+  .product_image_section {
+    position: relative;
+    z-index: 100;
+  }
+
+  .product_details_mid_section {
+    background: white;
+    border-radius: 25px;
+    position: relative;
+    bottom: 100px;
+  }
+
+  .product_name_section {
+    font-weight: bold;
+    position: relative;
+    top: 70px;
+    left: 35%;
+    text-align: left;
+
+    .product_title {
+      color: #706f7d
+    }
+  }
+
+  .product_price_section {
+    position: relative;
+    justify-content: center;
+    top: 70px;
+    display: flex;
+  }
+
+  .product_btn_controll_section {
+    top: 70px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    display: flex;
+  }
+
+  .product_detail_section{
+    top: 80px;
+    position: relative;
+  }
+   .product_about_section{
+    top: 80px;
+    position: relative;
+   }
+}
