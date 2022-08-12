@@ -21,37 +21,52 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div className="product_image_header">
+    <div class="container">
+      <div className="top">
         <div className="product_image_section">
-          <img className="product_image" src={productImage} />
+          <img className="product_image" src={productImage} alt="product_image" />
         </div>
       </div>
       <div className="product_details_mid_section">
         <div className="product_name_section">
-          <h1 className="product_title">Amisa</h1>
+          <h1 >Amisa</h1>
           <h1>Organic Spelt Cripsy Spelt Flakes</h1>
         </div>
         <div className="product_price_section">
-          <p>250g</p>
-          <p>€ 1.99</p>
+          <span className="product_weight">250g</span>
+          <span className="product_price">€1.99</span>
         </div>
-        <div className="product_btn_controll_section">
+        <div className="product_btn_control_section">
           <button onClick={handleDecQuantity}>-</button>
-          <p>{counter}</p>
+          <span>{counter}</span>
           <button onClick={handleIncQuantity}>+</button>
           <button>update Cart</button>
         </div>
+        <hr />
+
         <div className="product_detail_section">
-          <p>Delivered in:  2 days</p>
-          <p> Next day delivery:  order by 2:00pm</p>
-          <p> Delivery by:   Stove</p>
+          <div className="product_delivery_details">
+            <span>Delivered in:  </span>
+            <span>2 days</span>
+          </div>
+          <div className="product_delivery_details">
+            <span> Next day delivery:</span>
+            <span> order by 2:00pm</span>
+          </div>
+          <div className="product_delivery_details">
+            <span> Delivery by:</span>
+            <span>Stove</span>
+          </div>
         </div>
-        <div className="product_about_section">
+
+        <div>
           About the product
-          <p>{turnCateStr ? string.substring(0, 140) + "...." : string}</p>
-          <p onClick={() => setTurnCateStr(turnCateStr ? false : true)}>Read {turnCateStr ? "More" : "Less"}</p>
+          <div className="product_about_section">
+            <span style={{ width: "712px" }}>{turnCateStr ? string.substring(0, 140) + "...." : string}</span>
+            <p className="product_read_section" onClick={() => setTurnCateStr(turnCateStr ? false : true)}>Read {turnCateStr ? "More +" : "Less -"}</p>
+          </div>
         </div>
+        <hr />
       </div>
     </div>
   );
