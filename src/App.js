@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import productImage from "./assets/groceries_1UVT6zNottAHfy2RqFP9.webp"
 import { string } from './constant'
-import './App.scss';
+import './App.css';
 
 function App() {
   const [counter, setCounter] = useState(0)
@@ -22,53 +22,73 @@ function App() {
 
   return (
     <div class="container">
-      <div className="top">
-        <div className="product_image_section">
-          <img className="product_image" src={productImage} alt="product_image" />
+      <div class="top">
+        <div class="header-row">
+          <img src={productImage} alt="product" />
         </div>
       </div>
-      <div className="product_details_mid_section">
-        <div className="product_name_section">
-          <h1 >Amisa</h1>
-          <h1>Organic Spelt Cripsy Spelt Flakes</h1>
+      <div class="bottom">
+        <div className="product-name-description">
+          <h2 style={{ color: "#909327eb" }}>Amisa</h2>
+          <h2>Organic Spelt Cripsy Spelt Flakes</h2>
         </div>
-        <div className="product_price_section">
-          <span className="product_weight">250g</span>
-          <span className="product_price">€1.99</span>
-        </div>
-        <div className="product_btn_control_section">
-          <button onClick={handleDecQuantity}>-</button>
-          <span>{counter}</span>
-          <button onClick={handleIncQuantity}>+</button>
-          <button>update Cart</button>
-        </div>
-        <hr />
-
-        <div className="product_detail_section">
-          <div className="product_delivery_details">
-            <span>Delivered in:  </span>
-            <span>2 days</span>
+        <div class="product-row">
+          <div class="product-name-col">
+            <span class="product-weight-col">250g</span>
           </div>
-          <div className="product_delivery_details">
-            <span> Next day delivery:</span>
-            <span> order by 2:00pm</span>
-          </div>
-          <div className="product_delivery_details">
-            <span> Delivery by:</span>
-            <span>Stove</span>
+          <div class="product-amount-col">
+            <span class="product-size-col">€1.99</span>
           </div>
         </div>
-
-        <div>
-          About the product
-          <div className="product_about_section">
-            <span style={{ width: "712px" }}>{turnCateStr ? string.substring(0, 140) + "...." : string}</span>
-            <p className="product_read_section" onClick={() => setTurnCateStr(turnCateStr ? false : true)}>Read {turnCateStr ? "More +" : "Less -"}</p>
+        <div class="product-row">
+          <div class="product-quantity-col">
+            <div class="wrapper">
+              <span className="minus" onClick={handleDecQuantity}>-</span>
+              <span className="num">{counter}</span>
+              <span className="plus" onClick={handleIncQuantity}>+</span>
+            </div>
+          </div>
+          <div class="product-update-cart-btn">
+            <span >Update cart</span>
           </div>
         </div>
         <hr />
+        <div className="product-details-row">
+          <div class="product-row">
+            <div class="product-name-col">
+              <span class="transaction-name">Delivered in:</span>
+            </div>
+            <div class="transaction-amount-col">
+              <span class="product-delivery-name">2 days</span>
+            </div>
+          </div>
+          <div class="product-row">
+            <div class="product-name-col">
+              <span class="transaction-name">Next day delivery:</span>
+            </div>
+            <div class="transaction-amount-col">
+              <span class="product-delivery-name">Order by 2:00PM</span>
+            </div>
+          </div>
+          <div class="product-row">
+            <div class="product-name-col">
+              <span class="transaction-name">Delivery by:</span>
+            </div>
+            <div class="transaction-amount-col">
+              <span class="product-delivery-name">Stove</span>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div className='product-footer-section'>
+          <h3>About the product</h3>
+          <div className="product-about-us">{turnCateStr ? string.substring(0, 140) + "...." : string}
+          </div>
+          <p className="product-read-more-btn" onClick={() => setTurnCateStr(!turnCateStr)}>{turnCateStr ? "Read more  +" : "Read Less -"}</p>
+        </div>
       </div>
     </div>
+
   );
 }
 
