@@ -29,7 +29,7 @@ function App() {
       </div>
       <div class="bottom">
         <div className="product-name-description">
-          <h2 style={{ color: "#909327eb" }}>Amisa</h2>
+          <h2 style={{ color: "#666714" }}>Amisa</h2>
           <h2>Organic Spelt Cripsy Spelt Flakes</h2>
         </div>
         <div class="product-row">

@@ -93,7 +93,7 @@ div.product-name-col {
 
 .product-size-col{
     font-weight: bold;
-    opacity: 0.3;
+    opacity: 0.9;
     margin: 10px
 }
 
@@ -108,7 +108,12 @@ div.product-name-col {
     justify-content: center;
     align-content: stretch;
     flex-wrap: nowrap;
-    border-radius: 10px
+    border-radius: 10px;
+   
+}
+.product-size-col{
+    font-weight: bold;
+    color: black;
 }
 
 span.transaction-name,
